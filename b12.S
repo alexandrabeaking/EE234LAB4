@@ -4,6 +4,8 @@
 .set BUTTON_BASEADDR, 0x4BB02004
 .set TTC0, 0xF8001000
 
+
+main:
 TTC0_Configure:
 	LDR r1, =TTC0
 	MOVw r2, #0x13
@@ -17,7 +19,6 @@ TTC0_Configure:
 	MOVw r2, #0x22
 	STR r2, [r1,#0x0C]
 
-main:
 	LDR r0, =SEVENSEG_BASEADDR
 	LDR r1, =BUTTON_BASEADDR
 	MOV r10, #0
