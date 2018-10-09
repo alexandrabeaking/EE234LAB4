@@ -26,7 +26,7 @@ Wait_on_Btn0:
 	LDR r8, [r1]
 	MOV r9, #0x1
 	CMP r8, r9
-	MOV r10, #1
+	MOV r10, #1 //this is the flag bit, if r8 &r9 are equal this triggers a one in r10
 	BNE Wait_on_Btn0
 
 Digit_4:
@@ -101,9 +101,9 @@ Wait_on_Btn2:
 	//reg10 //act as our flag
 	// enter code here
 Check_Btn3:
-	LDR r10, [r1]
+	LDR r10, [r1] //r10 is the flag bit 
 	MOV r11, #0x08
-	CMP r10, r11
+	CMP r10, r11 //if they are equal then reset 
 	BEQ reset
 	bx lr
 	//enter your code here
